@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
   },
   highlight: {
-    fontWeight: '700',
+    fontFamily: 'Poppins-Bold',
   },
 });
 
