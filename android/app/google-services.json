@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "926311738932",
+    "project_id": "smartfaceassigment",
+    "storage_bucket": "smartfaceassigment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926311738932:android:e58a500f213d3fed3be461",
+        "android_client_info": {
+          "package_name": "com.smartface"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926311738932-3mlsjoog08otgflv644gm7m65fr15l3b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUHNBLu3tVgFZZb40IDP36hFP5xx1kt60"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926311738932-3mlsjoog08otgflv644gm7m65fr15l3b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
