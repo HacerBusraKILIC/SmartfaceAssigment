@@ -13,7 +13,7 @@ import {
   DrawerItem,
   DrawerItemList,
 } from '@react-navigation/drawer';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {StatusBar} from 'react-native';
 import {
   initialWindowMetrics,
@@ -29,6 +29,7 @@ import AppStyles from '../theme/Layout';
 import {Colors} from '../theme/Variables';
 // Redux
 import {UserState} from '../modules/user/reducers';
+import {logout} from '../modules/user/actions';
 
 export type NavigatorParamList = {
   login: undefined;
@@ -69,6 +70,7 @@ export const AppNavigator = React.forwardRef<
   NavigationContainerRef<any>,
   Partial<React.ComponentProps<typeof NavigationContainer>>
 >((props, ref) => {
+  const dispatch = useDispatch();
   return (
     <SafeAreaProvider
       style={AppStyles.fill}
@@ -86,7 +88,10 @@ export const AppNavigator = React.forwardRef<
                 <DrawerItemList {...props} />
                 <DrawerItem
                   label="Logout"
-                  onPress={() => props.navigation.navigate('login')}
+                  onPress={() => {
+                    dispatch(logout());
+                    props.navigation.navigate('login');
+                  }}
                 />
               </DrawerContentScrollView>
             );
