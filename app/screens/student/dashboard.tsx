@@ -2,9 +2,9 @@ import React from 'react';
 // Modules
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import {useNavigation} from '@react-navigation/native';
 // Components
-import {Header, HorizontalFlatlist} from '../../components';
-import HomeworkCard from './homeworkCard';
+import {Header, HorizontalFlatlist, HomeworkCard} from '../../components';
 // Helpers
 import {student_homework} from '../../helpers/mockData/student_homework';
 // Theme
@@ -13,6 +13,7 @@ import Fonts from '../../theme/Fonts';
 import {Colors, MetricsSizes} from '../../theme/Variables';
 // Dashboard
 const Dashboard = () => {
+  const navigation = useNavigation();
   const processes = [
     {status: 'To Do', typeColor: Colors.primary_dark},
     {status: 'In Progress', typeColor: Colors.primary_light},
@@ -31,6 +32,9 @@ const Dashboard = () => {
               data={student_homework}
               ChildrenItem={({item}) => (
                 <HomeworkCard
+                  onPress={() =>
+                    navigation.navigate('homework_detail', {item, status})
+                  }
                   item={item}
                   typeColor={process.typeColor}
                   status={process.status}

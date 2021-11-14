@@ -1,6 +1,7 @@
 import React from 'react';
 // Navigation
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+// Screens
 import Dashboard from './dashboard';
 import HomeworkDetail from './homeworkDetail';
 

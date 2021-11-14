@@ -1,27 +1,25 @@
-import {useNavigation} from '@react-navigation/native';
 import React, {useEffect} from 'react';
+// Modules
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 // Theme
-import Fonts from '../../theme/Fonts';
-import Layout from '../../theme/Layout';
-import {Colors, Dimension, MetricsSizes} from '../../theme/Variables';
+import Fonts from '../theme/Fonts';
+import Layout from '../theme/Layout';
+import {Colors, Dimension, MetricsSizes} from '../theme/Variables';
 // interface
 interface IHomeworkCard {
   typeColor: string;
   status: string;
   item: object;
+  onPress: () => void;
 }
 // Constants
 const CARD_PADDING = 15;
 // HomeworkCard
-const HomeworkCard = ({typeColor, status, item}: IHomeworkCard) => {
-  const navigation = useNavigation();
+const HomeworkCard = ({typeColor, status, item, onPress}: IHomeworkCard) => {
   const colored = {backgroundColor: typeColor, opacity: 0.8};
 
   return (
-    <Pressable
-      style={styles.card}
-      onPress={() => navigation.navigate('homework_detail', {item, status})}>
+    <Pressable style={styles.card} onPress={onPress}>
       <View style={[styles.colored, colored]} />
       <Text style={[styles.subject, colored, {width: 90}]}>{item.subject}</Text>
       <View style={styles.cardInner}>

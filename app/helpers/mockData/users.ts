@@ -110,4 +110,12 @@ export const users = [
     password: 'aaa',
     subject: 'History',
   },
+  {
+    id: 16,
+    namesurname: 'Joe New',
+    username: 'joenew',
+    role: 'teacher',
+    password: 'aaa',
+    subject: 'History',
+  },
 ];

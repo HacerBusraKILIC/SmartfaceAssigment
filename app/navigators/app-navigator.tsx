@@ -7,7 +7,12 @@ import {
   useNavigation,
 } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import {
+  createDrawerNavigator,
+  DrawerContentScrollView,
+  DrawerItem,
+  DrawerItemList,
+} from '@react-navigation/drawer';
 import {useSelector} from 'react-redux';
 import {StatusBar} from 'react-native';
 import {
@@ -74,6 +79,17 @@ export const AppNavigator = React.forwardRef<
           initialRouteName="Home"
           screenOptions={{
             headerShown: false,
+          }}
+          drawerContent={props => {
+            return (
+              <DrawerContentScrollView {...props}>
+                <DrawerItemList {...props} />
+                <DrawerItem
+                  label="Logout"
+                  onPress={() => props.navigation.navigate('login')}
+                />
+              </DrawerContentScrollView>
+            );
           }}>
           <Drawer.Screen name="Dashboard" component={AppStack} />
           <Drawer.Screen name="TeacherList" component={TeacherList} />
