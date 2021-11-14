@@ -33,7 +33,10 @@ const Dashboard = () => {
               ChildrenItem={({item}) => (
                 <HomeworkCard
                   onPress={() =>
-                    navigation.navigate('homework_detail', {item, status})
+                    navigation.navigate('homework_detail', {
+                      item,
+                      status: process.status,
+                    })
                   }
                   item={item}
                   typeColor={process.typeColor}

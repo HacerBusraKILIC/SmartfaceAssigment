@@ -5,7 +5,6 @@ import {
   StyleSheet,
   Text,
   Pressable,
-  Alert,
   Modal,
   View,
   ScrollView,
@@ -56,6 +55,9 @@ const TeacherItem = ({item, index}: ITeacherItem) => {
                 style={styles.closeButton}>
                 <Icon name="close" size={20} color={Colors.gray} />
               </Pressable>
+              <Text style={[Fonts.textRegular, {textAlign: 'center'}]}>
+                Students
+              </Text>
               <ScrollView showsVerticalScrollIndicator={false}>
                 {students.map((student, index) => (
                   <View key={student.namesurname} style={styles.container}>

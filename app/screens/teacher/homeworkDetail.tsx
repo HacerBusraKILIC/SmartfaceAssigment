@@ -64,7 +64,6 @@ const HomeworkDetail = ({route, navigation}) => {
           </Pressable>
         </ScrollView>
       </SafeAreaView>
-
       <Modal
         animationType="fade"
         transparent={true}
