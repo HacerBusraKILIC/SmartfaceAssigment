@@ -21,8 +21,6 @@ npm install
 <b>IOS</b>:
 
 ```command
-# Make sure the ANDROID_HOME environment variable is configured properly
-
 # to install pod dependencies
 cd ios
 npx pod-install 
