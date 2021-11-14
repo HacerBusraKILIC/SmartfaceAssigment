@@ -1,15 +1,45 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+// Modules
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+// Components
+import {Header, HorizontalFlatlist} from '../../components';
+import HomeworkCard from './homeworkCard';
+// Helpers
+import {student_homework} from '../../helpers/mockData/student_homework';
 // Theme
-import {Colors, Dimension} from '../../theme/Variables';
+import Fonts from '../../theme/Fonts';
+// Theme
+import {Colors, MetricsSizes} from '../../theme/Variables';
 // Dashboard
-const Dashboard = ({navigation}) => {
+const Dashboard = () => {
+  const processes = [
+    {status: 'To Do', typeColor: Colors.primary_dark},
+    {status: 'In Progress', typeColor: Colors.primary_light},
+    {status: 'Done', typeColor: Colors.gray},
+  ];
   return (
     <SafeAreaView style={styles.safearea}>
-      <View style={styles.container}>
-        <Text>AAA</Text>
-      </View>
+      <Header variant="primary" label="Dashboard" drawerButton={true} />
+      <ScrollView contentContainerStyle={styles.container}>
+        {processes.map(process => (
+          <View key={process.status}>
+            <Text style={[Fonts.textBold, styles.header]}>
+              {process.status}
+            </Text>
+            <HorizontalFlatlist
+              data={student_homework}
+              ChildrenItem={({item}) => (
+                <HomeworkCard
+                  item={item}
+                  typeColor={process.typeColor}
+                  status={process.status}
+                />
+              )}
+            />
+          </View>
+        ))}
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -18,13 +48,16 @@ export default Dashboard;
 
 const styles = StyleSheet.create({
   safearea: {
+    flex: 1,
     backgroundColor: Colors.white,
   },
   container: {
-    minHeight: Dimension.height,
     backgroundColor: Colors.white,
-    padding: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
+    padding: MetricsSizes.screenPadding,
+  },
+  header: {
+    borderBottomColor: Colors.black,
+    borderBottomWidth: 1,
+    marginBottom: 10,
   },
 });

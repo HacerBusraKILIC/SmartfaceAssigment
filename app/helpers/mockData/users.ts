@@ -68,6 +68,7 @@ export const users = [
     username: 'henryevelyn',
     role: 'teacher',
     password: 'aaa',
+    subject: 'Mathematics',
   },
   {
     id: 11,
@@ -75,6 +76,7 @@ export const users = [
     username: 'alexanderaamina',
     role: 'teacher',
     password: 'aaa',
+    subject: 'Mathematics',
   },
   {
     id: 12,
@@ -82,6 +84,7 @@ export const users = [
     username: 'abbieharper',
     role: 'teacher',
     password: 'aaa',
+    subject: 'Physical',
   },
   {
     id: 13,
@@ -89,6 +92,7 @@ export const users = [
     username: 'abdrielamina',
     role: 'teacher',
     password: 'aaa',
+    subject: 'Chemical',
   },
   {
     id: 14,
@@ -96,6 +100,7 @@ export const users = [
     username: 'abellocharlotte',
     role: 'teacher',
     password: 'aaa',
+    subject: 'Literature',
   },
   {
     id: 15,
@@ -103,5 +108,6 @@ export const users = [
     username: 'adinaisabella',
     role: 'teacher',
     password: 'aaa',
+    subject: 'History',
   },
 ];

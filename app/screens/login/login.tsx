@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+// Modules
 import {
   Keyboard,
   KeyboardAvoidingView,
@@ -9,14 +10,19 @@ import {
   View,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import {useDispatch} from 'react-redux';
 // Components
 import {Button} from '../../components';
+// Helpers
 import {users} from '../../helpers/mockData/users';
+// Redux
+import {login} from '../../modules/user/actions';
 // Theme
 import Fonts from '../../theme/Fonts';
 import {Colors, Dimension} from '../../theme/Variables';
 // Login
 const Login = ({navigation}) => {
+  const dispatch = useDispatch();
   // State
   const [form, setForm] = useState<object>({username: null, password: null});
   // Form Values
@@ -37,6 +43,7 @@ const Login = ({navigation}) => {
       filtered.role === 'student'
         ? navigation.navigate('student')
         : navigation.navigate('teacher');
+      dispatch(login(filtered));
     }
   };
 

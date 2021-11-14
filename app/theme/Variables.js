@@ -20,6 +20,7 @@ export const Colors = {
   dark_blue: '#0000ff',
   orange: '#ffb507',
   purple: '#af79f7',
+  backdrop: 'rgba(0,0,0,0.5)',
 };
 
 /**
@@ -43,6 +44,7 @@ export const MetricsSizes = {
   small,
   regular,
   large,
+  screenPadding: 20,
 };
 
 export const Dimension = {
