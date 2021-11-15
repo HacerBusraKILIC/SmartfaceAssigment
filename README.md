@@ -2,6 +2,8 @@
 Smartface Developer Assignment  
 The requirement is to implement a homework tracking platform for elementary school. On demand, teachers will assign the homework to the students they are in their class. The student will see the homework, upload the assignment (this can either be photo or document) to the relevant homework. 
 
+<div>⚠️ IMPORTANT: I request you to run it on android platform. I couldn't make the configurations for IOS because I didn't have enough time </div>
+
 ## Development & Deploying Guide
 
 ## Quick start
